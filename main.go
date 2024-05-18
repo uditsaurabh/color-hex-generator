@@ -3,6 +3,7 @@ package main
 import (
 	"math/rand"
 	"time"
+	"fmt"
 )
 
 func fillColors(colorMap *map[int][]string) {
@@ -62,5 +63,7 @@ func GenerateRandomColor() []string {
 	rand.Seed(time.Now().UnixNano())
 	colorMap := make(map[int][]string)
 	fillColors(&colorMap)
-	return colorMap[rand.Intn(50)]
+	op:=colorMap[rand.Intn(50)]
+	fmt.Println("the color is ",op)
+	return op
 }
