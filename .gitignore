@@ -38,4 +38,4 @@ go.sum
 bin/
 build/
 dist/
-temp/
+tmp/

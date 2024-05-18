@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -59,15 +58,9 @@ func fillColors(colorMap *map[int][]string) {
 	color[49] = []string{"SlateGray", "#708090"}
 }
 
-func GenerateRandomColor(colorMap *map[int][]string) []string {
+func GenerateRandomColor() []string {
 	rand.Seed(time.Now().UnixNano())
-	color := *colorMap
-	return color[rand.Intn(50)]
-}
-func main() {
 	colorMap := make(map[int][]string)
 	fillColors(&colorMap)
-	for i := 0; i < 5; i++ {
-		fmt.Println(GenerateRandomColor(&colorMap))
-	}
+	return colorMap[rand.Intn(50)]
 }
